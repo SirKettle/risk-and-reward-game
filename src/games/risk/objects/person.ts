@@ -56,7 +56,8 @@ export class Person {
   private riskLevel: RISK_LEVEL;
   private cursors: any;
   private inputKeys: any;
-  private sprite: Phaser.GameObjects.Image;
+  // private sprite: Phaser.GameObjects.Image;
+  private sprite: Phaser.GameObjects.Sprite;
 
   public getCash(): number {
     return this.cash;
@@ -73,7 +74,7 @@ export class Person {
   public getRiskLevel(): RISK_LEVEL {
     return this.riskLevel;
   }
-  public getBody(): Phaser.GameObjects.Image {
+  public getBody(): Phaser.GameObjects.Sprite {
     return this.sprite;
   }
 
@@ -104,11 +105,11 @@ export class Person {
   }
 
   private renderPersonGraphic(scene: Phaser.Scene): void {
-    this.sprite = scene.add.image(0, 0, "person");
+    this.sprite = scene.add.sprite(0, 0, "office-dude");
     scene.physics.world.enable(this.sprite);
   }
 
-  public update(): void { }
+  public update(): void {}
 
   private moveUp(): void {
     this.updatePosition(0, -this.size);

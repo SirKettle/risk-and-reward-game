@@ -30,7 +30,7 @@ const config: GameConfig = {
     touch: false,
     gamepad: false
   },
-  backgroundColor: "#000000",
+  backgroundColor: "#23AB54",
   pixelArt: true,
   antialias: false
 };
