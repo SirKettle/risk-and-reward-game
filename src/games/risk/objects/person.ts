@@ -107,6 +107,31 @@ export class Person {
   private renderPersonGraphic(scene: Phaser.Scene): void {
     this.sprite = scene.add.sprite(0, 0, "office-dude");
     scene.physics.world.enable(this.sprite);
+
+    const animConfig: AnimationConfig = {
+      frames: scene.anims.generateFrameNumbers("walk", {
+        start: 0,
+        end: 1
+      }),
+      frameRate: 10,
+      repeat: -1
+    };
+    scene.anims.create(animConfig);
+
+    // const frameNames = scene.anims.generateFrameNames( "office-dude", {
+    //   start: 1,
+    //   end: 2,
+    //   prefix: "../assets/games/risk/dude/walk/",
+    //   suffix: ".png"
+    // });
+
+    // scene.anims.create({
+    //   key: "walk",
+    //   frames: frameNames,
+    //   frameRate: 10,
+    //   repeat: -1
+    // });
+    this.sprite.anims.play("walk");
   }
 
   public update(): void {}
